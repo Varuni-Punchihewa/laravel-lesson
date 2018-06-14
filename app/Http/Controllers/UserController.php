@@ -34,12 +34,12 @@ class UserController extends Controller
         $user->last_name = $inputs["last_name"];
         $user->save();
 
-        $user_detail = UserDetail::firstOrCreate(
+        $user_detail = $user->userDetail()->updateOrCreate(
             [
                 'user_id' => $id
             ],
             [
-                'age' => $inputs["first_name"],
+                'age' => $inputs["age"],
                 'address' => $inputs["address"],
             ]);
 
