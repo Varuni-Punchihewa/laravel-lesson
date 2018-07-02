@@ -23,9 +23,13 @@ Route::post('/register_post', 'HomeController@register_post');
 Route::get('/login', 'LoginController@login');
 Route::post('/login_post', 'LoginController@login_post');
 
-// Home Route
-Route::get('/home', 'HomeController@home');
+Route::middleware('myAuth')->group(function () {
+	// Home Route
+	Route::get('/home', 'HomeController@home');
 
-// Update User
-Route::get('/user_update/{id}', 'UserController@user_update');
-Route::post('/user_update_post/{id}', 'UserController@user_update_post');
+	// Update User
+	Route::get('/user_update/{id}', 'UserController@user_update');
+	Route::post('/user_update_post/{id}', 'UserController@user_update_post');
+	
+	Route::get('/logout', 'LoginController@logout');
+});
