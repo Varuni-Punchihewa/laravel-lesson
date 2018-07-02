@@ -1,6 +1,6 @@
-<html>
-<body>
-<h2>HOME</h2>
+@extends('layouts.default')
+@section('content')
+<h1>HOME</h1>
 <table border="1">
     <tr>
         <th>ID</th>
@@ -22,5 +22,4 @@
         </tr>
     @endforeach
 </table>
-</body>
-</html>
+@stop

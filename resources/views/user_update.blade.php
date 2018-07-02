@@ -1,4 +1,5 @@
-<html>
+@extends('layouts.default')
+@section('content')
 <h2>User update</h2>
 <form method="post" action="{{ url("/user_update_post/".$user->id) }}">
 	@if ($errors->any())
@@ -29,4 +30,4 @@
 	<br>
 	<input type="submit" value="Update">
 </form>
-</html>	
+@stop
